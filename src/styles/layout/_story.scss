@@ -1,0 +1,147 @@
+.story {
+  padding: 10rem 0;
+
+  &-list {
+    @include flexbox(stretch);
+    gap: 3rem;
+  }
+
+  &-item {
+    max-width: 38rem;
+    &-header {
+      position: relative;
+      display: inline-block;
+    }
+
+    &-image {
+      max-width: 38rem;
+      max-height: 24rem;
+    }
+
+    &-date {
+      position: absolute;
+      width: 6rem;
+      height: 7rem;
+      background-color: $tertiary-color;
+      color: white;
+      bottom: 1rem;
+      left: -1rem;
+      @include flexbox(center, center, column);
+
+      .day {
+        font-size: 3rem;
+        font-weight: bold;
+      }
+
+      .month {
+        font-family: $secondary-font;
+        font-weight: 300;
+        font-style: italic;
+      }
+    }
+
+    &-title {
+      font-weight: 500;
+      font-size: 1.4rem;
+      margin: 2rem 0;
+      text-transform: uppercase;
+
+      @include textClamp;
+    }
+
+    &-desc {
+      line-height: 1.6;
+      color: $text-color;
+    }
+
+    &-divider {
+      width: 100%;
+      height: 1px;
+      background-color: $gray-divider-color;
+      margin: 2rem 0;
+    }
+
+    &-footer {
+      @include flexbox;
+      gap: 2rem;
+    }
+
+    &-icon {
+      i {
+        color: $tertiary-color;
+        margin-right: 0.5rem;
+      }
+
+      span {
+        font-family: $secondary-font;
+        font-style: italic;
+        color: $text-color;
+      }
+    }
+  }
+
+  @include maxWidth(1023px) {
+    &-item {
+      &-date {
+        width: 4rem;
+        height: 5rem;
+      }
+
+      .day {
+        font-size: 2rem;
+      }
+
+      &-title {
+        font-size: 1.2rem;
+      }
+
+      &-desc {
+        font-size: 1.2rem;
+      }
+
+      &-divider {
+        margin: 1rem 0;
+      }
+    }
+  }
+
+  @include maxWidth(767px) {
+    &-list {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &-item {
+      max-width: 35rem;
+      &-title {
+        margin: 1rem 0;
+      }
+    }
+  }
+}
+
+.map {
+  height: 20rem;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(white, 0.85),
+      rgba(white, 0.85)
+    ),
+    url("src/images/map.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  @include flexbox(center, center, column);
+  gap: 2rem;
+  color: $primary-color;
+  text-transform: uppercase;
+  font-size: 2.4rem;
+  font-weight: bold;
+
+  .divider {
+    width: 6.4rem;
+    height: 4px;
+    background-color: $primary-color;
+  }
+}

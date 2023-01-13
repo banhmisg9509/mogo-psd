@@ -1,0 +1,88 @@
+.people {
+  padding: 10rem 0;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(white, 0.85),
+      rgba(white, 0.85)
+    ),
+    url("src/images/mountain.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &-image {
+    max-width: 11rem;
+    max-height: 11rem;
+    flex-shrink: 0;
+  }
+
+  &-list {
+    @include flexbox(stretch, space-between, row, wrap);
+    margin-top: 9rem;
+    row-gap: 7rem;
+  }
+
+  &-item {
+    @include flexbox;
+    gap: 3rem;
+    width: calc(50% - 4rem);
+  }
+
+  &-name {
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+  }
+
+  &-job {
+    font-weight: 300;
+    font-size: 1.5rem;
+    font-style: italic;
+    font-family: $secondary-font;
+    color: $title-color;
+  }
+
+  &-desc {
+    font-family: $secondary-font;
+    font-size: 1.5rem;
+    color: $text-color;
+    line-height: 1.4;
+  }
+
+  &-divider {
+    margin: 2rem 0;
+    width: 6rem;
+    height: 3px;
+    background-color: $primary-color;
+  }
+
+  @include maxWidth(1023px) {
+    padding: 5rem 0;
+
+    &-item {
+      width: 100%;
+    }
+    &-list {
+      row-gap: 4rem;
+    }
+  }
+
+  @include maxWidth(767px) {
+    &-list {
+      row-gap: 3em;
+    }
+
+    &-image {
+      max-width: 7rem;
+      max-height: 7rem;
+    }
+
+    &-item {
+      gap: 2rem;
+    }
+
+    &-divider {
+      margin: 1.5rem 0;
+    }
+  }
+}

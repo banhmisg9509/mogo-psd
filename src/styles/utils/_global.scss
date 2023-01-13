@@ -1,0 +1,16 @@
+a {
+  text-decoration: none;
+  color: inherit
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+body {
+  font-family: $primary-font;
+  font-size: 1.4rem;
+  line-height: 1;
+  color: $title-color;
+}

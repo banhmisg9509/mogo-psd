@@ -1,0 +1,93 @@
+.team {
+  padding: 10rem 0;
+
+  &-list {
+    @include flexbox;
+    gap: 3rem;
+  }
+
+  &-image {
+    object-fit: cover;
+  }
+
+  &-info {
+    margin-top: 3rem;
+    text-align: center;
+  }
+
+  &-name {
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  &-position {
+    font-family: $secondary-font;
+    font-style: italic;
+    font-weight: 300;
+    color: $text-color;
+  }
+
+  &-social {
+    @include flexbox();
+  }
+
+  &-social-item {
+    width: 5.6rem;
+    height: 5.6rem;
+    background-color: $secondary-color;
+    font-size: 2rem;
+    color: $primary-color;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    @include flexbox(center, center);
+
+    &:hover {
+      background-color: $primary-color;
+      color: white;
+    }
+  }
+
+  &-social-item:not(:first-child) {
+    border-left: 1px solid $primary-color;
+  }
+
+  @include hoverEffect(".team-main", ".team-content");
+
+
+  @include maxWidth(1023px) {
+    padding: 5rem 0;
+
+    &-list {
+      grid-template-columns: unset;
+      grid-auto-columns: 80%;
+      grid-auto-flow: column;
+      gap: 2.5rem;
+      overflow-x: auto;
+      padding: 1rem;
+
+      scroll-snap-type: x mandatory;
+      scroll-snap-stop: always;
+
+    }
+
+    &-item {
+      scroll-snap-align: start;
+    }
+
+    &-image {
+      min-width: 28rem;
+      height: 37rem;
+    }
+  }
+}
+
+
+.brand {
+  padding: 8rem 0;
+  background-color: $gray-color;
+
+  @include maxWidth(767px) {
+    padding: 3rem 0;
+  }
+}

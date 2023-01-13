@@ -1,0 +1,13 @@
+section.team 
+  .container 
+    +blockBox('Who we are', 'Meet our team', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ')
+    .team-list 
+      +teamItem('src/images/team1.jpg','Matthew Dix','Graphic Design')
+        +teamSocial
+      +teamItem('src/images/team2.jpg', 'Christopher Campbell', 'Branding/UX design')
+        +teamSocial
+      +teamItem('src/images/team3.jpg', 'Michael Fertig', 'Developer')
+        +teamSocial
+section.brand 
+  .container 
+    img(src="src/images/brands.png", alt="brands")

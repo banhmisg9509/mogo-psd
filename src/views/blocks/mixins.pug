@@ -1,0 +1,120 @@
+mixin menuLink(title, href = '#')
+  li.header-menu-item 
+    a.header-menu-link(href= href)= title 
+
+mixin menuIcon(iconClass, href = '#')
+  li.header-menu-item
+    a.header-menu-icon(href= href) 
+      i(class= iconClass)
+
+mixin headerBottomItem(number, title)
+  .header-bottom-item 
+    span.header-bottom-number= number
+    span.header-bottom-text= title
+
+mixin blockBox(caption, title, desc)
+  .block-box 
+    h3.block-box-caption= caption 
+    h2.block-box-heading= title 
+    div.block-box-divider 
+    if desc 
+      p.block-box-desc= desc 
+
+mixin aboutItem(src, title, iconClass, alt = '')
+  .about-item 
+    img.about-image(src= src, alt= alt)
+    .about-content
+      i.about-icon(class= iconClass)
+      span.about-title= title 
+
+mixin serviceItem(src, title, desc)
+  .service-item 
+    img.service-item-icon(src= src)
+    .service-item-info 
+      h3.service-item-title= title 
+      p.service-item-desc= desc
+
+mixin wedoItem(src, title, content)
+  .wedo-item(class= expand)
+    .wedo-item-header 
+      .wedo-item-header-left 
+        img.wedo-item-header-img(src= src)
+        h4.wedo-item-header-title= title 
+      .wedo-item-header-right 
+        i.fa.fa-chevron-down
+    .wedo-item-content
+      p= content
+
+mixin teamSocial(facebook = '#', twitter = '#', pinterest = '#', instagram = '#')
+  ul.team-social
+    li.team-social-item 
+      a.team-social-link(href= facebook)
+        i.fab.fa-facebook-f
+    li.team-social-item 
+      a.team-social-link(href= twitter)
+        i.fab.fa-twitter
+    li.team-social-item 
+      a.team-social-link(href= pinterest)
+        i.fab.fa-pinterest
+    li.team-social-item 
+      a.team-social-link(href= instagram)
+        i.fab.fa-instagram
+
+mixin teamItem(src, name, position)
+  .team-item 
+    .team-main 
+      img.team-image(src= src)
+      .team-content 
+        if block 
+          block
+    .team-info 
+      h3.team-name= name
+      span.team-position= position
+
+mixin workItem(src, title, desc)
+  .work-item 
+    img.work-image(src= src)
+    .work-content 
+      i.fa.fa-image.work-icon
+      h3.work-title= title 
+      span.work-desc= desc
+
+mixin peopleItem(src, name, job, desc)
+  li.people-item 
+    img.people-image(src= src)
+    .people-info 
+      h3.people-name= name
+      span.people-job= job 
+      .people-divider
+      p.people-desc= desc
+
+mixin storyItem(src, title, desc, view, comment, day, month, href = '#')
+  li.story-item
+    a.story-item-header(href='#')
+      img.story-item-image(src= src)
+      .story-item-date
+        span.day= day
+        span.month= month
+    .story-item-content
+      a.story-item-title(href='#')= title
+      .story-item-desc= desc 
+    .story-item-divider 
+    .story-item-footer 
+      .story-item-icon 
+        i.fa.fa-eye 
+        span= view
+      .story-item-icon 
+        i.fa.fa-comment-dots
+        span= comment
+
+mixin quoteItem(src, desc, author, type = 'icon')
+  .quote-item 
+    if type == 'icon'
+      .quote-icon
+        img(src= src)
+    else
+      .quote-image 
+        img(src= src)
+    .quote-info 
+      p.quote-desc= desc
+      span.quote-author= author
